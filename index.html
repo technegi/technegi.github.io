@@ -1,84 +1,478 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <title>Mahesh Negi</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Resume</title>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<style type="text/css">
+		body{ background:black; margin:0 auto;overflow-x:hidden; color:white; }
+		.flex-container{
+			display: flex;
+			flex-direction: reverse;
+		}
+		.container{
+			max-width: 1440px;
+			margin: 0 auto;
+			padding: 20px 70px;
+		}
+		.row {
+			display: flex;
+			flex-direction: row;
+			gap: 20px;
+
+		}
+		.column{
+			flex: 1;
+		}
+		img{ width:100%; }
+		/* START: Header CSS */
+		header .navbar{
+			background:black;
+		}
+		header .navdiv{
+			display: flex;align-items: center;justify-content: space-between;
+		}
+		header .column-logo a{
+			font-size: 35px;font-weight: 600;color:white;text-decoration: none;
+		}
+		header li{
+			list-style: none;display: inline-block;
+		}
+		header li a{
+			color: white;font-size: 18px;font-weight: bold;margin-right: 25px;text-decoration: none;
+		}
+		/* END: Header CSS */
+		
+		/* START: Hero Section CSS */
+		.hero .container .row {
+		    max-width: 850px;
+		    margin: 0 auto;
+		}
+		.hero-img { 
+			width: fit-content; border: 18px solid #444; border-radius: 50%; overflow: hidden; max-height: 348px;
+		}
+		.hero-img img{ 
+			height:100%;width:100%; 
+		}
+		.element.style {
+         padding: 6px 8px;
+         border: 2px;
+         margin: 2px;
+         border-radius: 30px;
+         }
+		/* END: Hero Section CSS */
+
+		/* START:What i do section */
+		.column.wid-2nd-col {
+		    flex-grow: 25;
+		}
+		/* END:What i do section */
+		/* START:Testimonials */
+		.column.testimonials-2nd-col{
+			padding: 10px;
+			margin: 20px;
+		}
+		.testimonials-sec img {
+		    max-width: 150px;
+		    width: 80%;
+		    object-fit: cover;
+		    border-radius: 50%;
+		    height: 80px;
+		}
+		.testimonial-content {
+        position: relative;
+        padding: 30px 20px 20px 60px;
+        background-color: #282828;
+        border-radius: 8px;
+        border: 2px solid #444;
+        }
+    
+		
+		/* END:Testimonials */
+		.company {
+			display: inline-block;
+            font-size: 12px;
+           color: #aaa;
+           opacity: 0.7;
+           margin-left: 5px;
+		}
+		/* START: Education CSS */
+		span.item-company {
+		    border: 2px solid brown;
+		    border-radius: 30px;
+		    padding: 3px 12px;
+		    margin-right: 5px;
+		    color: #fff;
+		}
+		.resume > div > div > div .row {
+		    border-left: 1px solid #333;
+		    padding-left: 20px;
+		}
+		.resume > div > div > div .row:not(:last-child) {
+		    border-bottom: 1px solid #333;
+		}
+		h3.item-period {
+		    margin-left: -40px;
+		    font-size: 14px;
+		    font-weight: 300;
+		    color: lightgray;
+		}
+
+		/* END: Education CSS */
+		.certifiicate{
+			background:#black;
+			padding: 12px 15px;
+			border-radius: 10px;
+		}
+		/* START: Skills css */
+		.skills-grid {
+         display: grid;
+         grid-template-columns: 1fr 1fr;
+         gap: 60px;
+	     }
+	     .skills-col h3 {
+	      margin-bottom: 36px;
+	      color: white;
+	    }
+
+	    .skill-item { margin-bottom: 28px; }
+	    .skill-header {
+	      display: flex;
+	      justify-content: space-between;
+	      align-items: center;
+	      margin-bottom: 10px;
+	    }
+	    .skill-name {
+	      font-size: 11px;
+	      letter-spacing: 0.12em;
+	      text-transform: uppercase;
+	      color:white;
+	    }
+	    .skill-pct {
+	      font-size: 11px;
+	      color:white;
+	    }
+	    .skill-bar {
+	      height: 3px;
+	      background: blue;
+	      position: relative;
+	      overflow: hidden;
+	    }
+	    .skill-fill {
+	      height: 100%;
+	      background: linear-gradient(90deg, #4444ff, #7777ff);
+	      transform-origin: left;
+	      animation: expandBar 1.2s ease both;
+	    }
+    	/*END:Skills css*/
+	    footer .column:nth-child(2){ text-align: right; }
+	    footer .footer-links {
+		  text-align: right;
+		}
+	    .footer-links a {  text-decoration: none;}
+	    .footer-links a { text-decoration: none; }
+	    .footer-links a:not(:last-child) {
+		    margin-right: 15px;
+		}
+    
+	</style>
 </head>
-<body style="margin:0; font-family: Arial, sans-serif; background-color:#f4f4f4;">
-
-    <!-- Header -->
-    <div style="background-color: color:white; padding:30px; text-align:center;">
-        <img src=".mahesh-negi-profile.jpg" alt="Profile Picture"
-             style="border-radius:50%; width:120px; height:120px; object-fit:cover; border:3px solid white;">
-        <h1 style="margin:10px 0 5px 0;">Mahesh Negi</h1>
-        <p style="margin:5px 0;">Recent Graduate | Aspiring Developer</p>
-    </div>
-
-    <!-- About Section -->
-    <div style="padding:20px;">
-        <h2 style="color:#333;">About Me</h2>
-        <p style="color:#555; line-height:1.6;">
-            I am a recent graduate passionate about technology and problem-solving.
-            I enjoy building web applications and continuously learning new skills.
-        </p>
-    </div>
-
-    <!-- Education Section -->
-    <div style="padding:20px; background-color:#fff;">
-        <h2 style="color:#333;">Education</h2>
-
-        <div style="margin-bottom:15px;">
-            <h3 style="margin:0;">Bachelor of Computer Application(BCA)</h3>
-            <p style="margin:5px 0; color:#555;">Indira Gandhi National Open University</p>
-            <p style="margin:0; color:#777;">2022 – 2026</p>
-        </div>
-
-        <div>
-            <h3 style="margin:0;">Senior Secondary (12th)</h3>
-            <p style="margin:5px 0; color:#555;">Govt Inter collage kheera</p>
-            <p style="margin:0; color:#777;">2020 – 2022</p>
-        </div>
-    </div>
-
-    <!-- Skills Section -->
-    <div style="padding:20px;">
-        <h2 style="color:#333;">Skills</h2>
-        <ul style="color:#555;">
-            <li>HTML, CSS, JavaScript</li>
-            <li>Python / Java / C++</li>
-            <li>Git & GitHub</li>
-            <li>Basic Web Design</li>
-        </ul>
-    </div>
-
-    <!-- Projects Section -->
-    <div style="padding:20px; background-color:#fff;">
-        <h2 style="color:#333;">Projects</h2>
-
-        <div style="background:#f9f9f9; padding:15px; margin-bottom:15px; border-radius:5px;">
-            <h3 style="margin-top:0;">Project One</h3>
-            <p style="color:#555;">Royal banquet tool JavaScript</p>
-        </div>
-
-        <div style="background:#f9f9f9; padding:15px; margin-bottom:15px; border-radius:5px;">
-            <h3 style="margin-top:0;">Project Two</h3>
-            <p style="color:#555;">Online examination tooL ASP.net</p>
-        </div>
-
-    </div>
-
-    <!-- Contact Section -->
-    <div style="padding:20px;">
-        <h2 style="color:#333;">Contact</h2>
-        <p style="color:#555;">maheshneg520@gmail.com</p>
-        <p style="color:#555;">LinkedIn: https://www.linkedin.com/public-profile/settings</p>
-        <p style="color:#555;">GitHub: GitHub Dashboard https://share.google/6PZipaHEbAq9CcNzx</p>
-    </div>
-
-    <!-- Footer -->
-    <div style="background-color:#333; color:white; text-align:center; padding:10px;">
-        <p style="margin:0;">© 2026 Mahesh negi</p>
-    </div>
-
-</body>
-</html>
+<body>
+	<header class="main-header">
+		<div class="container">
+			<div class="row">
+				<div class="column column-logo">
+					<a href="#">
+						Mahesh Negi
+					</a>
+				</div>
+				<div class="column column-menu">
+					<nav class="navbar">
+						<ul>
+							<li><a href="#">About me</a></li>
+							<li><a href="#">Resume</a></li>
+							<li><a href="#">Portfolio</a></li>
+							<li><a href="#">Blog</a></li>
+							<li><a href="#">Contact</a></li>
+						</ul>
+					</nav>
+				</div>
+			</div>
+		</div>
+	</header>
+	<section class="hero" style="background:black;color: white;">
+		<div class="container">
+			<div class="row">
+				<div class="column column-left">
+					<div class="hero-img">
+						<img src="./img/profile-picture-square.jpg"alt="profile">
+					</div>
+				</div>
+				<div class="column column-right">
+					<div class="hero text">
+						<h3>Web Designer</h3>
+						<h1>Mahesh Negi</h1>
+						<p>Fusce tempor magna mi, non egestas velit ultricies nec. Aenean convallis, risus non condimentum gravida, odio mauris ullamcorper felis, ut venenatis purus ex eu mi. Quisque imperdiet lacinia urna, a placerat sapien pretium eu.
+						</p>
+						<div class="buttos">
+							<button class="btn primary">Download CV</button>
+							<button class="btn">Contact</button>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+	<section class="what-i-do">
+		<div class="container">
+			<h2>What I Do</h2>
+			<div class="row">
+				<div class="column">
+					<div class="row">
+						<div class="column"><i class="fa fa-pencil" aria-hidden="true"></i></div>
+						<div class="column wid-2nd-col">
+							<h3>Copywrite</h3>
+							<p>Mauris neque libero, aliquet vel mollis nec, euismod sed tellus. Mauris convallis dictum elit id volutpat. Vivamus blandit, dolor vitae lacinia maximus, risus velit vehicula odio, a tincidunt turpis turpis tempus ex.</p>
+						</div>
+					</div>
+					<div class="row">
+						<div class="column"><i class="fa fa-desktop" aria-hidden="true"></i></div>
+						<div class="column wid-2nd-col">
+							<h3>Web Design</h3>
+							<p>Mauris neque libero, aliquet vel mollis nec, euismod sed tellus. Mauris convallis dictum elit id volutpat. Vivamus blandit, dolor vitae lacinia maximus, risus velit vehicula odio, a tincidunt turpis turpis tempus ex.</p>
+						</div>
+					</div>
+				</div>
+				<div class="column">
+					<div class="row">
+						<div class="column"><i class="fa fa-home" aria-hidden="true"></i></div>
+						<div class="column wid-2nd-col">
+							<h3>Ecommerce</h3>
+							<p>Mauris neque libero, aliquet vel mollis nec, euismod sed tellus. Mauris convallis dictum elit id volutpat. Vivamus blandit, dolor vitae lacinia maximus, risus velit vehicula odio, a tincidunt turpis turpis tempus ex.</p>
+						</div>
+					</div>
+					<div class="row">
+						<div class="column"><i class="fa fa-bullhorn" aria-hidden="true"></i></div>
+						<div class="column wid-2nd-col">
+							<h3>Marketing</h3>
+							<p>Mauris neque libero, aliquet vel mollis nec, euismod sed tellus. Mauris convallis dictum elit id volutpat. Vivamus blandit, dolor vitae lacinia maximus, risus velit vehicula odio, a tincidunt turpis turpis tempus ex.</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+	<section class="testimonials-sec">
+		<div class="container">
+			<div class="row">
+				<div class="column">
+					<h2>Testimonials</h2>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<div class="row">
+						<div class="column testimonial-item">
+							<img src="https://lmpixels.com/demo/leven-html-new/full-width-dark/img/testimonials/testimonial-1.jpg" alt="User 1">
+							<p>Donec eu est vel metus consequat volutpat. Nunc aliquet euismod mauris, a feugiat urna ullamcorper non.</p>
+							<h5>Billy Admas</h5>
+						</div>
+						<div class="column testimonial-item">
+							<img src="https://lmpixels.com/demo/leven-html-new/full-width-dark/img/testimonials/testimonial-2.jpg" alt="User 2">
+							<p>Donec eu est vel metus consequat volutpat. Nunc aliquet euismod mauris, a feugiat urna ullamcorper non.</p>
+							<h5>Billy Admas</h5>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+	<section class="resume">
+		<div class="container">
+			<div class="row">
+				<div class="column">
+					<h2>Education</h2>
+					<div class="row">
+						<div class="column">
+							<div class="column wid-2nd-col">
+								<h3 class="item-period edu-uni-nam">
+									<span class="item-company">2009</span>
+									University of Studies
+								</h3>
+								<h4 class="item-title">UI Design</h4>
+								<p>Duis posuere, quam non imperdiet egestas, eros enim mattis mauris, in posuere lacus arcu quis felis. Etiam interdum erat non enim venenatis fermentum.</p>
+							</div>
+						</div>
+					</div>
+					<div class="row">
+						<div class="column">
+							<div class="column wid-2nd-col">
+								<h3 class="item-period ">
+									<span class="item-company">2009</span>
+									University of Studies
+								</h3>
+								<h4 class="item-title">UI Design</h4>
+								<p>Duis posuere, quam non imperdiet egestas, eros enim mattis mauris, in posuere lacus arcu quis felis. Etiam interdum erat non enim venenatis fermentum.</p>
+							</div>
+						</div>
+					</div>
+					<div class="row">
+						<div class="column">
+							<div class="column wid-2nd-col">
+								<h3 class="item-period ">
+									<span class="item-company">2007</span>
+									University of Studies
+								</h3>
+								<h4 class="item-title">Frontend Development</h4>
+								<p>Duis posuere, quam non imperdiet egestas, eros enim mattis mauris, in posuere lacus arcu quis felis. Etiam interdum erat non enim venenatis fermentum.</p>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="column">
+					<h2>Experience</h2>
+					<div class="row">
+						<div class="column">
+							<div class="column wid-2nd-col">
+								<h3 class="item-period">
+									<span class="item-company">current</span>
+								 Rolling thunder</h3>
+								 <h4 class="item-title">Lead UI/UX Designer</h4>
+								 <p>Praesent dignissim sollicitudin justo, sed elementum quam lacinia quis. Phasellus eleifend tristique posuere. Sed vitae dui nec magna.</p>
+							</div>
+						</div>
+					</div>
+					<div class="row">
+						<div class="column">
+							<div class="column wid-2nd-col">
+								<h3 class="item-period">
+								<span class="item-company">2013 - 2016</span>
+								 Locost Accessories</h3>
+								 <h4 class="item-title">Lead UI/UX Designer</h4>
+								 <p>Praesent dignissim sollicitudin justo, sed elementum quam lacinia quis. Phasellus eleifend tristique posuere. Sed vitae dui nec magna.</p>
+							</div>
+						</div>
+					</div>
+					<div class="row">
+						<div class="column">
+							<div class="column wid-2nd-col">
+								<h3 class="item-period">
+								<span class="item-company">2011 - 2013</span>
+								 Sagebrush</h3>
+								 <h4 class="item-title">Junior UI/UX Designer</h4>
+								 <p>Praesent dignissim sollicitudin justo, sed elementum quam lacinia quis. Phasellus eleifend tristique posuere. Sed vitae dui nec magna.</p>
+							</div>
+						</div>
+					</div>	
+				</div>
+			</div>
+		</section>
+		<section class="certifiicate">
+			<div class="container">
+				<div class="row">
+					<div class="column">
+						<h2>Certificates</h2>
+						<div class="column wid-2nd-col">
+							<h3>Psyhology of Intertnation Design</h3>
+							<p>ID:XXXX</p>
+							<span>19 April 2018</span>
+						</div>
+					</div>
+					<div class="card">
+						<h3>Psyhology of Intertnation Design</h3>
+						<p>ID:XXXX</p>
+						<span>19 April 2018</span>
+					</div>
+				</div>
+			</div>
+		</section>
+		<section id="skills">
+			<div class="container">
+				<div class="skills-grid">
+					<div class="skills-col">
+						<h3>Design Skills</h3>
+						<div class="skill-item">
+							<div class="skill-header">
+								<span class="skill-name">UI / UX Design</span>
+								<span class="skill-pct">95%</span>
+							</div>
+							<div class="skill-bar"><div class="skill-fill" style="width:95%;animation-delay:0.1s"></div>
+						   </div>
+						</div>
+						<div class="skill-item">
+							<div class="skill-header">
+								<span class="skill-name">Print Design</span>
+								<span class="skill-pct">75%</span>
+							</div>
+							<div class="skill-bar"><div class="skill-fill" style="width:75%;animation-delay:0.2s"></div>
+						    </div>
+						</div>
+						<div class="skill-item">
+							<div class="skill-header">
+								<span class="skill-name">Graphic Design</span>
+								<span class="skill-pct">85%</span>
+							</div>
+							<div class="skill-bar"><div class="skill-fill" style="width:85%;animation-delay:0.3s"></div></div>
+						</div>
+						<div class="skill-item">
+							<div class="skill-header">
+								<span class="skill-name">Logo Design</span>
+								<span class="skill-pct">90%</span>
+							</div>
+							<div class="skill-bar"><div class="skill-fill" style="width:90%;animation-delay:0.4s"></div></div>
+						</div>
+					</div>
+					<div class="skills-col">
+						<h3>Coding Skills</h3>
+						<div class="skill-item">
+							<div class="skill-header">
+								<span class="skill-name">HTML / CSS</span>
+								<span class="skill-pct">100%</span>
+							</div>
+							<div class="skill-bar"><div class="skill-fill" style="width:100%;animation-delay:0.1s"></div></div>
+						</div>
+						<div class="skill-item">
+							<div class="skill-header">
+								<span class="skill-name">PHP</span>
+								<span class="skill-pct">90%</span>
+							</div>
+							<div class="skill-bar"><div class="skill-fill" style="width:90%;animation-delay:0.2s"></div></div>
+						</div>
+						<div class="skill-item">
+							<div class="skill-header">
+								<span class="skill-name">JavaScript</span>
+								<span class="skill-pct">90%</span>
+							</div>
+							<div class="skill-bar"><div class="skill-fill" style="width:90%;animation-delay:0.3s"></div></div>
+						</div>
+						<div class="skill-item">
+							<div class="skill-header">
+								<span class="skill-name">Smarty / Twig</span>
+								<span class="skill-pct">85%</span>
+							</div>
+							<div class="skill-bar"><div class="skill-fill" style="width:85%;animation-delay:0.4s"></div></div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+		<footer>
+			<div class="container">
+				<div class="row">
+					<div class="column">
+						<div class="footer-copy">© 2026 Mahesh Negi — All rights reserved</div>
+					</div>
+					<div class="column">
+						<div class="footer-links">
+							<a href="#">Twitter</a>
+							<a href="#">Facebook</a>
+							<a href="#">Instagram</a>
+							<a href="#">LinkedIn</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</footer>
+	</body>
+	</html>
