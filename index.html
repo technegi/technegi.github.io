@@ -5,8 +5,11 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>Resume</title>
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
 	<style type="text/css">
-		body{ background:black; margin:0 auto;overflow-x:hidden; color:white; }
+		body{ background:black; margin:0 auto;overflow-x:hidden; color:white; font-family: "Poppins", sans-serif;}
 		.flex-container{
 			display: flex;
 			flex-direction: reverse;
@@ -40,17 +43,20 @@
 			list-style: none;display: inline-block;
 		}
 		header li a{
-			color: white;font-size: 18px;font-weight: bold;margin-right: 25px;text-decoration: none;
+			color: white;font-size: 18px;font-weight: 500;margin-right: 25px;text-decoration: none;
 		}
 		/* END: Header CSS */
 		
 		/* START: Hero Section CSS */
+		section.hero {
+		    background: linear-gradient(180deg, rgb(0 0 0) 0%, rgba(165, 42, 42, 1) 101%);
+		}
 		.hero .container .row {
 		    max-width: 850px;
 		    margin: 0 auto;
 		}
 		.hero-img { 
-			width: fit-content; border: 18px solid #444; border-radius: 50%; overflow: hidden; max-height: 348px;
+			width: fit-content; border: 18px solid #726e6e; border-radius: 50%; overflow: hidden; max-height: 348px;
 		}
 		.hero-img img{ 
 			height:100%;width:100%; 
@@ -60,12 +66,43 @@
          border: 2px;
          margin: 2px;
          border-radius: 30px;
+
          }
+      .buttos{ display:flex;gap: 15px; }
+      .btn-primary {
+		    border: 2px solid brown;
+		    border-radius: 30px;
+		    text-decoration: none;
+		    color: #fff;
+		    padding: 8px 15px;
+		}
+		.btn-primary:hover {
+			background-color: brown;
+			color: #fff;
+		}
+      .buttos{ display: flex;}
+      .btn{
+      	border:2px solid brown;
+      	border-radius: 30px;
+      	text-decoration: none;
+      	color: white;
+      	padding: 8px 15px;
+      }
+      .btn:hover{
+      	background-color: white;
+      	color: black;
+      	border-color: #fff;
+      }
+         
 		/* END: Hero Section CSS */
 
 		/* START:What i do section */
+		.what-i-do{ background: linear-gradient(179deg, rgba(165, 42, 42, 1) 50%, rgb(0 0 0) 100%) }
 		.column.wid-2nd-col {
 		    flex-grow: 25;
+		}
+		.what-i-do .column.wid-2nd-col h3 {
+		    margin-top: 0;
 		}
 		/* END:What i do section */
 		/* START:Testimonials */
@@ -74,11 +111,11 @@
 			margin: 20px;
 		}
 		.testimonials-sec img {
-		    max-width: 150px;
-		    width: 80%;
+		    max-width: 100px;
+		    width:100%;
 		    object-fit: cover;
 		    border-radius: 50%;
-		    height: 80px;
+		    height: 100px;
 		}
 		.testimonial-content {
         position: relative;
@@ -118,13 +155,20 @@
 		    font-weight: 300;
 		    color: lightgray;
 		}
+		.item-title a, .item-period a {
+		    color: #fff;
+		}
 
 		/* END: Education CSS */
 		.certifiicate{
+			display: none;
 			background:#black;
 			padding: 12px 15px;
 			border-radius: 10px;
 		}
+		.certificates-sec {
+         display: none;
+      }
 		/* START: Skills css */
 		.skills-grid {
          display: grid;
@@ -144,7 +188,7 @@
 	      margin-bottom: 10px;
 	    }
 	    .skill-name {
-	      font-size: 11px;
+	      font-size: 16px;
 	      letter-spacing: 0.12em;
 	      text-transform: uppercase;
 	      color:white;
@@ -155,26 +199,31 @@
 	    }
 	    .skill-bar {
 	      height: 3px;
-	      background: blue;
+	      background: brown;
 	      position: relative;
 	      overflow: hidden;
 	    }
 	    .skill-fill {
 	      height: 100%;
-	      background: linear-gradient(90deg, #4444ff, #7777ff);
+	      background: linear-gradient(90deg, white	, white);
 	      transform-origin: left;
 	      animation: expandBar 1.2s ease both;
 	    }
     	/*END:Skills css*/
+    	/* START: fotter css */
 	    footer .column:nth-child(2){ text-align: right; }
-	    footer .footer-links {
+	    footer .footer-links 
+	    {
 		  text-align: right;
 		}
-	    .footer-links a {  text-decoration: none;}
-	    .footer-links a { text-decoration: none; }
-	    .footer-links a:not(:last-child) {
+	    .footer-links a {  text-decoration: none; color: #fff;}
+	    .footer-links a:not(:last-child ) {
 		    margin-right: 15px;
 		}
+		.footer-copy {
+    font-size: 14px;
+}
+		/*END:fotter css*/
     	/* START: Responsive CSS */
     	/* Extra small devices (phones, 600px and down) */
 		@media only screen and (max-width: 600px) {
@@ -220,23 +269,23 @@
 			</div>
 		</div>
 	</header>
-	<section class="hero" style="background:black;color: white;">
+	<section class="hero">
 		<div class="container">
 			<div class="row">
 				<div class="column column-left">
 					<div class="hero-img">
-						<img src="./img/profile-picture-square.jpg"alt="profile">
+						<img src="https://technegi.github.io/img/profile-picture-square.jpg"alt="profile">
 					</div>
 				</div>
 				<div class="column column-right">
 					<div class="hero text">
 						<h3>Web Designer</h3>
 						<h1>Mahesh Negi</h1>
-						<p>Fusce tempor magna mi, non egestas velit ultricies nec. Aenean convallis, risus non condimentum gravida, odio mauris ullamcorper felis, ut venenatis purus ex eu mi. Quisque imperdiet lacinia urna, a placerat sapien pretium eu.
+						<p>I recently completed my Bachelor of Computer Applications (BCA) and am currently training at RidgeMinds as a Graduate Engineer Trainee, where I'm building hands-on experience in web development and front-end technologies.
 						</p>
 						<div class="buttos">
-							<button class="btn primary">Download CV</button>
-							<button class="btn">Contact</button>
+							<a class="btn btn-primary" href="#">Download CV</a>
+							<a class="btn" href="mailto:maheshnegi520@googe.com">Contact</a>
 						</div>
 					</div>
 				</div>
@@ -251,15 +300,15 @@
 					<div class="row">
 						<div class="column"><i class="fa fa-pencil" aria-hidden="true"></i></div>
 						<div class="column wid-2nd-col">
-							<h3>Copywrite</h3>
-							<p>Mauris neque libero, aliquet vel mollis nec, euismod sed tellus. Mauris convallis dictum elit id volutpat. Vivamus blandit, dolor vitae lacinia maximus, risus velit vehicula odio, a tincidunt turpis turpis tempus ex.</p>
+							<h3>UI/UX Design</h3>
+							<p>Leveraging cloud-based AI tools to design and prototype interactive web pages.</p>
 						</div>
 					</div>
 					<div class="row">
 						<div class="column"><i class="fa fa-desktop" aria-hidden="true"></i></div>
 						<div class="column wid-2nd-col">
 							<h3>Web Design</h3>
-							<p>Mauris neque libero, aliquet vel mollis nec, euismod sed tellus. Mauris convallis dictum elit id volutpat. Vivamus blandit, dolor vitae lacinia maximus, risus velit vehicula odio, a tincidunt turpis turpis tempus ex.</p>
+							<p>Pixel-perfect layouts with purposeful structure. Responsive, accessible, and visually refined.</p>
 						</div>
 					</div>
 				</div>
@@ -268,39 +317,14 @@
 						<div class="column"><i class="fa fa-home" aria-hidden="true"></i></div>
 						<div class="column wid-2nd-col">
 							<h3>Ecommerce</h3>
-							<p>Mauris neque libero, aliquet vel mollis nec, euismod sed tellus. Mauris convallis dictum elit id volutpat. Vivamus blandit, dolor vitae lacinia maximus, risus velit vehicula odio, a tincidunt turpis turpis tempus ex.</p>
+							<p>Storefronts built to convert — seamless UX, smart product pages, and frictionless checkout flows.</p>
 						</div>
 					</div>
 					<div class="row">
 						<div class="column"><i class="fa fa-bullhorn" aria-hidden="true"></i></div>
 						<div class="column wid-2nd-col">
 							<h3>Marketing</h3>
-							<p>Mauris neque libero, aliquet vel mollis nec, euismod sed tellus. Mauris convallis dictum elit id volutpat. Vivamus blandit, dolor vitae lacinia maximus, risus velit vehicula odio, a tincidunt turpis turpis tempus ex.</p>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</section>
-	<section class="testimonials-sec">
-		<div class="container">
-			<div class="row">
-				<div class="column">
-					<h2>Testimonials</h2>
-				</div>
-			</div>
-			<div class="row">
-				<div class="column">
-					<div class="row">
-						<div class="column testimonial-item">
-							<img src="https://lmpixels.com/demo/leven-html-new/full-width-dark/img/testimonials/testimonial-1.jpg" alt="User 1">
-							<p>Donec eu est vel metus consequat volutpat. Nunc aliquet euismod mauris, a feugiat urna ullamcorper non.</p>
-							<h5>Billy Admas</h5>
-						</div>
-						<div class="column testimonial-item">
-							<img src="https://lmpixels.com/demo/leven-html-new/full-width-dark/img/testimonials/testimonial-2.jpg" alt="User 2">
-							<p>Donec eu est vel metus consequat volutpat. Nunc aliquet euismod mauris, a feugiat urna ullamcorper non.</p>
-							<h5>Billy Admas</h5>
+							<p>Design that drives action. From campaign assets to landing pages that capture attention.</p>
 						</div>
 					</div>
 				</div>
@@ -316,11 +340,11 @@
 						<div class="column">
 							<div class="column wid-2nd-col">
 								<h3 class="item-period edu-uni-nam">
-									<span class="item-company">2009</span>
-									University of Studies
+									<span class="item-company">2025</span>
+										Indira Gandhi National Open University
 								</h3>
-								<h4 class="item-title">UI Design</h4>
-								<p>Duis posuere, quam non imperdiet egestas, eros enim mattis mauris, in posuere lacus arcu quis felis. Etiam interdum erat non enim venenatis fermentum.</p>
+								<h4 class="item-title">Bachelor of Computer Applications (BCA)</h4>
+								<p>Comprehensive study of computer science fundamentals, web technologies, and software development principles.</p>
 							</div>
 						</div>
 					</div>
@@ -328,11 +352,11 @@
 						<div class="column">
 							<div class="column wid-2nd-col">
 								<h3 class="item-period ">
-									<span class="item-company">2009</span>
-									University of Studies
+									<span class="item-company">2022</span>
+									Govt I . C .KHEERA
 								</h3>
-								<h4 class="item-title">UI Design</h4>
-								<p>Duis posuere, quam non imperdiet egestas, eros enim mattis mauris, in posuere lacus arcu quis felis. Etiam interdum erat non enim venenatis fermentum.</p>
+								<h4 class="item-title">12th Standard — Science Stream</h4>
+								<p>Foundation in analytical thinking, mathematics, and sciences that underpins technical problem-solving.</p>
 							</div>
 						</div>
 					</div>
@@ -340,11 +364,11 @@
 						<div class="column">
 							<div class="column wid-2nd-col">
 								<h3 class="item-period ">
-									<span class="item-company">2007</span>
-									University of Studies
+									<span class="item-company">2020</span>
+									Govt H .S .S .GODI
 								</h3>
-								<h4 class="item-title">Frontend Development</h4>
-								<p>Duis posuere, quam non imperdiet egestas, eros enim mattis mauris, in posuere lacus arcu quis felis. Etiam interdum erat non enim venenatis fermentum.</p>
+								<h4 class="item-title">10th Standard</h4>
+								<p>Core academic grounding across multiple disciplines with distinction in mathematics and computers.</p>
 							</div>
 						</div>
 					</div>
@@ -355,53 +379,31 @@
 						<div class="column">
 							<div class="column wid-2nd-col">
 								<h3 class="item-period">
-									<span class="item-company">current</span>
-								 Rolling thunder</h3>
-								 <h4 class="item-title">Lead UI/UX Designer</h4>
-								 <p>Praesent dignissim sollicitudin justo, sed elementum quam lacinia quis. Phasellus eleifend tristique posuere. Sed vitae dui nec magna.</p>
+									<span class="item-company">April 2026 - Current</span>
+								 <a href="https://www.ridgeminds.com/">RidgeMinds</a></h3>
+								 <h4 class="item-title">Graduate Engineer Trainee (GET)</h4>
+								 <p>Learning about the basics of web development with front-end technologies and back-end language.</p>
 							</div>
 						</div>
 					</div>
-					<div class="row">
-						<div class="column">
-							<div class="column wid-2nd-col">
-								<h3 class="item-period">
-								<span class="item-company">2013 - 2016</span>
-								 Locost Accessories</h3>
-								 <h4 class="item-title">Lead UI/UX Designer</h4>
-								 <p>Praesent dignissim sollicitudin justo, sed elementum quam lacinia quis. Phasellus eleifend tristique posuere. Sed vitae dui nec magna.</p>
-							</div>
-						</div>
-					</div>
-					<div class="row">
-						<div class="column">
-							<div class="column wid-2nd-col">
-								<h3 class="item-period">
-								<span class="item-company">2011 - 2013</span>
-								 Sagebrush</h3>
-								 <h4 class="item-title">Junior UI/UX Designer</h4>
-								 <p>Praesent dignissim sollicitudin justo, sed elementum quam lacinia quis. Phasellus eleifend tristique posuere. Sed vitae dui nec magna.</p>
-							</div>
-						</div>
-					</div>	
 				</div>
 			</div>
 		</section>
-		<section class="certifiicate">
+		<section class="certificates-sec">
 			<div class="container">
 				<div class="row">
 					<div class="column">
 						<h2>Certificates</h2>
 						<div class="column wid-2nd-col">
-							<h3>Psyhology of Intertnation Design</h3>
+							<h3>Bachelor of Computer Applications.</h3>
 							<p>ID:XXXX</p>
-							<span>19 April 2018</span>
+							<span> JUNE  2025</span>
 						</div>
 					</div>
 					<div class="card">
-						<h3>Psyhology of Intertnation Design</h3>
+						<h3>Diploma in Information Technology.</h3>
 						<p>ID:XXXX</p>
-						<span>19 April 2018</span>
+						<span>JUNE 2024</span>
 					</div>
 				</div>
 			</div>
@@ -410,10 +412,10 @@
 			<div class="container">
 				<div class="skills-grid">
 					<div class="skills-col">
-						<h3>Design Skills</h3>
+						<h3>Skills</h3>
 						<div class="skill-item">
 							<div class="skill-header">
-								<span class="skill-name">UI / UX Design</span>
+								<span class="skill-name">HTML / CSS</span>
 								<span class="skill-pct">95%</span>
 							</div>
 							<div class="skill-bar"><div class="skill-fill" style="width:95%;animation-delay:0.1s"></div>
@@ -421,7 +423,7 @@
 						</div>
 						<div class="skill-item">
 							<div class="skill-header">
-								<span class="skill-name">Print Design</span>
+								<span class="skill-name">PHP</span>
 								<span class="skill-pct">75%</span>
 							</div>
 							<div class="skill-bar"><div class="skill-fill" style="width:75%;animation-delay:0.2s"></div>
@@ -429,45 +431,45 @@
 						</div>
 						<div class="skill-item">
 							<div class="skill-header">
-								<span class="skill-name">Graphic Design</span>
+								<span class="skill-name">JavaScript</span>
 								<span class="skill-pct">85%</span>
 							</div>
 							<div class="skill-bar"><div class="skill-fill" style="width:85%;animation-delay:0.3s"></div></div>
 						</div>
 						<div class="skill-item">
 							<div class="skill-header">
-								<span class="skill-name">Logo Design</span>
+								<span class="skill-name">Smarty / Twig</span>
 								<span class="skill-pct">90%</span>
 							</div>
 							<div class="skill-bar"><div class="skill-fill" style="width:90%;animation-delay:0.4s"></div></div>
 						</div>
 					</div>
 					<div class="skills-col">
-						<h3>Coding Skills</h3>
+						<h3>Area of Hobbies</h3>
 						<div class="skill-item">
 							<div class="skill-header">
-								<span class="skill-name">HTML / CSS</span>
+								<span class="skill-name">UI/UX Design</span>
 								<span class="skill-pct">100%</span>
 							</div>
 							<div class="skill-bar"><div class="skill-fill" style="width:100%;animation-delay:0.1s"></div></div>
 						</div>
 						<div class="skill-item">
 							<div class="skill-header">
-								<span class="skill-name">PHP</span>
+								<span class="skill-name">Print Design</span>
 								<span class="skill-pct">90%</span>
 							</div>
 							<div class="skill-bar"><div class="skill-fill" style="width:90%;animation-delay:0.2s"></div></div>
 						</div>
 						<div class="skill-item">
 							<div class="skill-header">
-								<span class="skill-name">JavaScript</span>
+								<span class="skill-name">Graphic Design</span>
 								<span class="skill-pct">90%</span>
 							</div>
 							<div class="skill-bar"><div class="skill-fill" style="width:90%;animation-delay:0.3s"></div></div>
 						</div>
 						<div class="skill-item">
 							<div class="skill-header">
-								<span class="skill-name">Smarty / Twig</span>
+								<span class="skill-name">Logo Design</span>
 								<span class="skill-pct">85%</span>
 							</div>
 							<div class="skill-bar"><div class="skill-fill" style="width:85%;animation-delay:0.4s"></div></div>
@@ -477,17 +479,17 @@
 			</div>
 		</section>
 		<footer>
-			<div class="container">
+			<div class="container ">
 				<div class="row">
 					<div class="column">
 						<div class="footer-copy">© 2026 Mahesh Negi — All rights reserved</div>
 					</div>
 					<div class="column">
 						<div class="footer-links">
-							<a href="#">Twitter</a>
-							<a href="#">Facebook</a>
-							<a href="#">Instagram</a>
-							<a href="#">LinkedIn</a>
+							<a href="#"><i class="fa fa-linkedin" aria-hidden="true"></i></a>
+							<a href="https://github.com/technegi/"><i class="fa fa-github" aria-hidden="true"></i></a>
+							<a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a>
+							<a href="#"><i class="fa fa-instagram" aria-hidden="true"></i></a>
 						</div>
 					</div>
 				</div>
